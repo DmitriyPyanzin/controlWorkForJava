@@ -1,10 +1,10 @@
 package Toys;
 
-public class SponchBob extends Toys {
+public class DonaldDuck extends Toys {
 
-    private final int id = 3;
+    private final int id = 2;
 
-    private final String name = "Спанч Боб";
+    private final String name = "Дональд Дак";
 
     private int quantity = 0;
 

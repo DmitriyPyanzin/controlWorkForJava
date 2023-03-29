@@ -2,37 +2,32 @@ package Toys;
 
 public abstract class Toys implements interfaceOfToy {
 
-    private final int id;
+    private int id;
+    private String name;
+    private int quantity;
+    private double frequencyOfLoss;
 
-    private final String name;
 
-    private int quantity = 0;
-
-    private double frequencyOfLoss = 0;
-
-    public Toys(int id, String name, int quantity, double frequencyOfLoss) {
-        this.id = id;
-        this.name = name;
-        this.quantity = quantity;
-        this.frequencyOfLoss = frequencyOfLoss;
-    }
-
+    @Override
     public int getId() {
         return id;
 
     }
 
+    @Override
     public String getName() {
         return name;
 
     }
 
+    @Override
     public int getQuantity() {
         return quantity;
 
     }
 
-    public double getFrequencyOfLoss () {
+    @Override
+    public double getFrequencyOfLoss() {
         return frequencyOfLoss;
 
     }
