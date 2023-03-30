@@ -8,6 +8,9 @@ public interface interfaceOfToy {
 
     int getQuantity();
 
-    double getFrequencyOfLoss();
+    int getFrequencyOfLoss();
 
+    void changeQuantityToys(int num);
+
+    void changeLossToys(int num);
 }

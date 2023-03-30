@@ -6,9 +6,9 @@ public class SponchBob extends Toys {
 
     private final String name = "Спанч Боб";
 
-    private int quantity = 0;
+    public static int quantity;
 
-    private double frequencyOfLoss = 0;
+    public static int frequencyOfLoss;
 
 
 
@@ -31,7 +31,7 @@ public class SponchBob extends Toys {
     }
 
     @Override
-    public double getFrequencyOfLoss() {
+    public int getFrequencyOfLoss() {
         return frequencyOfLoss;
 
     }
@@ -39,5 +39,19 @@ public class SponchBob extends Toys {
     @Override
     public String toString() {
         return id + " - " + name + ", количество - " + quantity + ", шанс выпадения - " + frequencyOfLoss;
+
     }
+
+    @Override
+    public void changeQuantityToys(int num) {
+        quantity = quantity + num;
+
+    }
+
+    @Override
+    public void changeLossToys(int num) {
+        frequencyOfLoss = frequencyOfLoss + num;
+
+    }
+
 }

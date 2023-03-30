@@ -2,10 +2,10 @@ package Toys;
 
 public abstract class Toys implements interfaceOfToy {
 
-    private int id;
-    private String name;
-    private int quantity;
-    private double frequencyOfLoss;
+    public int id;
+    public String name;
+    public static int quantity;
+    public static int frequencyOfLoss;
 
 
     @Override
@@ -27,8 +27,20 @@ public abstract class Toys implements interfaceOfToy {
     }
 
     @Override
-    public double getFrequencyOfLoss() {
+    public int getFrequencyOfLoss() {
         return frequencyOfLoss;
+
+    }
+
+    @Override
+    public void changeQuantityToys(int num) {
+        quantity = quantity + num;
+
+    }
+
+    @Override
+    public void changeLossToys(int num) {
+        frequencyOfLoss = frequencyOfLoss + num;
 
     }
 
