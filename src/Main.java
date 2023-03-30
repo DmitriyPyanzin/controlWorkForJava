@@ -1,7 +1,11 @@
 import InputMethods.*;
 import TextMethods.*;
-import Toys.ChangeLoss;
-import Toys.ChangeQuantity;
+import Toys.*;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -10,6 +14,7 @@ public class Main {
         new Greeting().greeting();
         new UserInput().nextLine();
         boolean isQuit = true;
+        ArrayList<String> listOfToys = new ArrayList<>();
 
         while (isQuit) {
             int answer = -1;
@@ -54,18 +59,50 @@ public class Main {
                             else if (ansChoice == 2)
                                 new ChangeLoss().changeLoss(ans);
 
+                            else if (ansChoice == 3)
+                                new Raffle().raffle(listOfToys, ans);
+
                         }
                     }
                 }
 
             } else if (answer == 2) {
-                System.out.println("Здесь список игрушек на выдачу");
+                if (listOfToys.size() == 0)
+                    System.out.println("\nИгрушек нет в списке на выдачу\n");
+                else {
+                    for (String listOfToy : listOfToys) {
+                        System.out.println(listOfToy);
+                    }
+                    System.out.println();
+                }
 
             } else if (answer == 3) {
-                System.out.println("Здесь выдаем призовую игрушку");
+                if (listOfToys.size() == 0)
+                    System.out.println("\nИгрушек нет в списке на выдачу\n");
+                else {
+                    try (FileWriter writer = new FileWriter("listToys.txt", true))
+                    {
+                        writer.write(listOfToys.get(0));
+                        writer.append("\n");
+                        writer.flush();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    listOfToys.remove(0);
+                    System.out.println("\nИгрушку отдали победителю!\n");
+                }
 
             } else {
-                System.out.println("Здесь смотрим список выданных игрушек");
+                try(FileReader reader = new FileReader("listToys.txt"))
+                {
+                    int c;
+                    while ((c=reader.read()) !=-1 ){
+                        System.out.print((char) c);
+                    }
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
 
             }
         }

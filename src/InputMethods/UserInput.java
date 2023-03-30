@@ -32,7 +32,7 @@ public class UserInput {
         } catch (InputMismatchException e) {
             throw new ScannerException("Вы ввели не число");
         }
-        if (num < 0 || num > 2)
+        if (num < 0 || num > 3)
             throw new AnswerException("Команды " + num + " нет");
 
         return num;
@@ -60,8 +60,8 @@ public class UserInput {
         } catch (InputMismatchException e) {
             throw new ScannerException("Вы ввели не число");
         }
-        if (num < 0)
-            throw new NumberException("Число не может быть отрицательным");
+        if (num < -101)
+            throw new NumberException("Слишком маленькое число");
         if (num > 100)
             throw new MaxToysException("Слишком большое число");
 

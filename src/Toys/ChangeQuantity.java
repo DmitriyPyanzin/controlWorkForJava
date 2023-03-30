@@ -35,17 +35,17 @@ public class ChangeQuantity {
             }
 
         } else if (answer == 2) {
-            if (new DonaldDuck().getFrequencyOfLoss() == 25) {
+            if (new DonaldDuck().getQuantity() == 25) {
                 System.out.println("Нельзя больше добавлять игрушек");
 
-            } else if (new DonaldDuck().getFrequencyOfLoss() + num > 25) {
+            } else if (new DonaldDuck().getQuantity() + num > 25) {
                 System.out.println("Слишком много игрушек нельзя добавить, теперь их максимальное количество");
-                new DonaldDuck().changeQuantityToys(Math.abs(new DonaldDuck().getFrequencyOfLoss() - num));
-                System.out.println("Количество игрушек стало " + new DonaldDuck().getFrequencyOfLoss());
+                new DonaldDuck().changeQuantityToys(Math.abs(new DonaldDuck().getQuantity() - num));
+                System.out.println("Количество игрушек стало " + new DonaldDuck().getQuantity());
 
             } else {
                 new DonaldDuck().changeQuantityToys(num);
-                System.out.println("Количество игрушек стало " + new DonaldDuck().getFrequencyOfLoss());
+                System.out.println("Количество игрушек стало " + new DonaldDuck().getQuantity());
 
             }
 

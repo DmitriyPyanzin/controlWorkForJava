@@ -13,6 +13,7 @@ public class TextSponchBob {
         System.out.println("1 - Увеличим количество игрушек? (сейчас их " + sponchBob.getQuantity() + ")");
         System.out.println("2 - Увеличим шанс выпадения игрушек? (сейчас он равен "
                 + sponchBob.getFrequencyOfLoss() + ")");
+        System.out.println("3 - Разыграть игрушку");
         System.out.println("0 - нияего не делать");
 
     }
